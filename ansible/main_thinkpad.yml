@@ -1,0 +1,7 @@
+- hosts: openSUSE
+  become: true
+  vars:
+    HOME_DIR: /home/pragmatias
+    RESS_DIR: ../resources
+  roles :
+    - thinkpad

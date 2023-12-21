@@ -1,0 +1,15 @@
+# - name: Manage Repositories
+#   ansible.builtin.include_tasks:
+#     file: repositories.yml
+#
+# - name: Manage Packages
+#   ansible.builtin.include_tasks:
+#     file: packages.yml
+#
+- name: Manage KDE Config
+  ansible.builtin.include_tasks:
+    file: kde_config.yml
+
+- name: Manage General Config
+  ansible.builtin.include_tasks:
+    file: general_config.yml

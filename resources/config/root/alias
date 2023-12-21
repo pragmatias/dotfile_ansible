@@ -1,0 +1,38 @@
+# ~/.alias
+
+# Alias
+export LS_OPTIONS='--color=auto'
+eval "$(dircolors)"
+alias ls='ls $LS_OPTIONS'
+alias ll='ls -AlF'
+alias la='ls -A'
+alias l='ls -CF'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias vi='nvim'
+
+
+# Zypper Alias
+alias zypin='sudo zypper in'
+alias zyprm='sudo zypper rm --clean-deps'
+alias zypdup='sudo zypper ref; sudo zypper dup'
+
+# PS1
+ROUGE='\[\033[0;31m\]'
+VERT='\[\033[0;32m\]'
+ORANGE='\[\033[0;33m\]'
+BLEU='\[\033[0;34m\]'
+BLANC='\[\033[0;37m\]'
+GRIS='\[\033[0;m\]'
+
+PS1="${GRIS}[${VERT}\u${GRIS} (\h): ${ORANGE}\w${GRIS}] ${VERT}\$ ${GRIS}"
+
+# Vim 
+EDITOR=vim
+VISUAL=$EDITOR
+export EDITOR VISUAL
+
+

@@ -1,0 +1,76 @@
+- name: Load Vars KDE Config File
+  ansible.builtin.include_vars:
+    file: kde_config.yml
+    name: kde_config_file
+
+- name: Change KDE Config (kwinrc)
+  community.general.kdeconfig:
+    path: "{{ HOME_DIR }}/.config/kwinrc"
+    values:
+      - group: "{{ item.group }}"
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+    backup: false
+  with_items:
+    - "{{ kde_config_file.kwinrc }}"
+
+- name: Change KDE Config (kglobalshortcutsrc)
+  community.general.kdeconfig:
+    path: "{{ HOME_DIR }}/.config/kglobalshortcutsrc"
+    values:
+      - group: "{{ item.group }}"
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+    backup: false
+  with_items:
+    - "{{ kde_config_file.kglobalshortcutsrc }}"
+
+- name: Change KDE Config (plasmarc)
+  community.general.kdeconfig:
+    path: "{{ HOME_DIR }}/.config/plasmarc"
+    values:
+      - group: "{{ item.group }}"
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+    backup: false
+  with_items:
+    - "{{ kde_config_file.plasmarc }}"
+
+- name: Change KDE Config (kdeglobals)
+  community.general.kdeconfig:
+    path: "{{ HOME_DIR }}/.config/kdeglobals"
+    values:
+      - group: "{{ item.group }}"
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+    backup: false
+  with_items:
+    - "{{ kde_config_file.kdeglobals }}"
+
+- name: Change KDE Config (plasma-localerc)
+  community.general.kdeconfig:
+    path: "{{ HOME_DIR }}/.config/plasma-localerc"
+    values:
+      - group: "{{ item.group }}"
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+    backup: false
+  with_items:
+    - "{{ kde_config_file.plasmalocalerc }}"
+
+- name: Change KDE Config (powermanagementprofilesrc)
+  community.general.kdeconfig:
+    path: "{{ HOME_DIR }}/.config/powermanagementprofilesrc"
+    values:
+      - groups: ["{{ item.group1 }}","{{ item.group2 }}"]
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+    backup: false
+  with_items:
+    - "{{ kde_config_file.powermanagementprofilesrc }}"
+
+- name: Copy KDE Panel Config File (plasma-org.kde.plasma.desktop-appletsrc)
+  ansible.builtin.copy:
+    src: "{{ RESS_DIR }}/config/plasma-org.kde.plasma.desktop-appletsrc"
+    dest: "{{ HOME_DIR }}/.config/plasma-org.kde.plasma.desktop-appletsrc"
+    mode: '0644'

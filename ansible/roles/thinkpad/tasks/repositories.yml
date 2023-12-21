@@ -1,0 +1,21 @@
+
+- name: Load Vars Repositories File
+  ansible.builtin.include_vars:
+    file: repositories.yml
+    name: repositories
+
+
+- name : Add Repositories
+  community.general.zypper_repository:
+    name: "{{ item.name }}"
+    repo: "{{ item.url }}"
+    priority: "{{ item.priority }}"
+    state: present
+    refresh: true
+  with_items:
+    - "{{ repositories.repos }}"
+
+- name: Refresh Repositories
+  community.general.zypper_repository:
+    repo: '*'
+    runrefresh: true

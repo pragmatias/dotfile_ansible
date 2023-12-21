@@ -1,0 +1,21 @@
+
+- name: Load Vars Packages File
+  ansible.builtin.include_vars:
+    file: packages.yml
+    name: packages
+
+
+- name: Refresh Existing Packages
+  community.general.zypper:
+    name: '*'
+    state: latest
+
+
+- name: Add Packages
+  community.general.zypper:
+    name: "{{ item }}"
+    state: latest
+    disable_recommends: false
+  with_items:
+    - "{{ packages.packages }}"
+

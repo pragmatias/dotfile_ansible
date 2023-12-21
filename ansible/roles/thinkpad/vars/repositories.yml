@@ -1,0 +1,16 @@
+repos : 
+- name: "packman"
+  url: "http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/"
+  priority: 90
+- name: "obs"
+  url: "http://download.opensuse.org/repositories/X11:/Utilities/openSUSE_Tumbleweed/"
+  priority: 105
+- name: "vscode"
+  url: "https://packages.microsoft.com/yumrepos/vscode"
+  priority: 80
+- name: "dvdcss"
+  url: "http://opensuse-guide.org/repo/openSUSE_Tumbleweed/"
+  priority: 80
+- name: "google-chrome-beta"
+  url: "https://dl.google.com/linux/chrome/rpm/stable/x86_64"
+  priority: 80
