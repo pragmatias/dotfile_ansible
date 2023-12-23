@@ -4,7 +4,7 @@
 
 DIR_ROOT=${HOME}
 
-WRK_DIR="${DIR_ROOT}/Work/opensuse-thinkpad"
+WRK_DIR="${DIR_ROOT}/Work/dotfile_ansible"
 WRK_RES="${WRK_DIR}/resources"
 WRK_CONF="${WRK_RES}/config"
 

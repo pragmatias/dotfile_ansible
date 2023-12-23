@@ -14,16 +14,16 @@ local config = function()
     pickers = {
       find_files = {
         theme = "dropdown",
-        previewer = false,
+        previewer = true,
         hidden = true,
       },
       live_grep = {
         theme = "dropdown",
-        previewer = false,
+        previewer = true,
       },
       find_buffers = {
         theme = "dropdown",
-        previewer = false,
+        previewer = true,
       }
     },
   })
@@ -34,8 +34,8 @@ end
 return {
   'nvim-telescope/telescope.nvim', 
   tag = '0.1.4',
-  lazy = true,
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  lazy = false,
+  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter'},
   config = config,
   keys = {
     -- keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>"),
