@@ -3,39 +3,53 @@
     src: "{{ RESS_DIR }}/config/root/alias"
     dest: "{{ HOME_DIR }}/.alias"
     mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
 
 - name: Copy Bashrc conf
   ansible.builtin.copy:
     src: "{{ RESS_DIR }}/config/root/bashrc"
     dest: "{{ HOME_DIR }}/.bashrc"
     mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
 
 - name: Copy Zshrc conf
   ansible.builtin.copy:
     src: "{{ RESS_DIR }}/config/root/zshrc"
     dest: "{{ HOME_DIR }}/.zshrc"
     mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
 
 - name: Copy Tmux conf
   ansible.builtin.copy:
     src: "{{ RESS_DIR }}/config/tmux"
     dest: "{{ HOME_DIR }}/.config/tmux"
     mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
 
 - name: Copy Nvim conf
   ansible.builtin.copy:
     src: "{{ RESS_DIR }}/config/nvim"
     dest: "{{ HOME_DIR }}/.config/nvim"
     mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
 
 - name: Copy Kitty conf
   ansible.builtin.copy:
     src: "{{ RESS_DIR }}/config/kitty"
     dest: "{{ HOME_DIR }}/.config/kitty"
     mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
 
 - name: Copy SSH conf
   ansible.builtin.copy:
-    src: "{{ RESS_DIR }}/config/ssh"
+    src: "{{ RESS_DIR }}/config/ssh/"
     dest: "{{ HOME_DIR }}/.ssh"
     mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"

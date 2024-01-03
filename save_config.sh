@@ -44,4 +44,10 @@ cp -R ${DIR_CONF}/nvim ${WRK_CONF}/.
 cp -R ${DIR_CONF}/kitty ${WRK_CONF}/.
 
 
+# SSh key Management with Ansible
+[[ -d {WRK_CONF}/ssh ]] || mkdir -p ${WRK_CONF}/ssh
+cp ${DIR_ROOT}/.ssh/key* ${WRK_CONF}/ssh/.
+cp ${DIR_ROOT}/.ssh/config ${WRK_CONF}/ssh/.
 
+# prompt password to encrypt files
+ansible-vault encrypt ${WRK_CONF}/ssh/*

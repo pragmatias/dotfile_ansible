@@ -206,7 +206,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][108][Applets][119][Configuration]
-PreloadWeight=54
+PreloadWeight=56
 
 [Containments][108][Applets][120]
 immutability=1
@@ -227,7 +227,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][108][Applets][122][Configuration]
-PreloadWeight=67
+PreloadWeight=77
 
 [Containments][108][Applets][122][Configuration][General]
 showPercentage=true
@@ -244,7 +244,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][108][Applets][150][Configuration]
-PreloadWeight=31
+PreloadWeight=7
 
 [Containments][108][ConfigDialog]
 DialogHeight=450
@@ -300,7 +300,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][68][Applets][149][Configuration]
-PreloadWeight=26
+PreloadWeight=2
 
 [Containments][68][Applets][69]
 immutability=1
@@ -380,7 +380,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][68][Applets][81][Configuration]
-PreloadWeight=26
+PreloadWeight=18
 
 [Containments][68][Applets][82]
 immutability=1
@@ -467,7 +467,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][90][Applets][103][Configuration]
-PreloadWeight=26
+PreloadWeight=18
 
 [Containments][90][Applets][104]
 immutability=1
@@ -481,7 +481,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][90][Applets][148][Configuration]
-PreloadWeight=26
+PreloadWeight=2
 
 [Containments][90][Applets][91]
 immutability=1
@@ -558,4 +558,4 @@ knownItems=org.kde.plasma.pkupdates,org.kde.plasma.volume,org.kde.plasma.network
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/trash.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c,desktop:/Home.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c
+screenMapping=desktop:/Home.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c,desktop:/trash.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c

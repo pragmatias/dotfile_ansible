@@ -41,3 +41,4 @@ packages:
 - x11                                        
 - x11_yast                                   
 - zsh                                        
+- gcc

@@ -3,6 +3,6 @@ return {
 	, lazy = false
 	, priority = 998 
 	, config = function()
-		vim.cmd('colorscheme nordic')
+      vim.cmd('colorscheme nordic')
 	  end
 }
