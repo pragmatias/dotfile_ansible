@@ -53,3 +53,20 @@
     mode: '0644'
     owner: "{{ HOME_USR }}"
     group: "{{ HOME_USR }}"
+
+- name: Change Permission Private SSH key 1
+  ansible.builtin.file:
+    path: "{{ HOME_DIR }}/.ssh/key_ed25519_github"
+    mode: '0600'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
+
+- name: Change Permission Private SSH key 2
+  ansible.builtin.file:
+    path: "{{ HOME_DIR }}/.ssh/key_ed25519_global"
+    mode: '0600'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
+
+
+
