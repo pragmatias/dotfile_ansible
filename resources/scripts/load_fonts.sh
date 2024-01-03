@@ -28,4 +28,5 @@ ls *.zip | xargs -l unzip -o -d ./tmp
 sudo cp ./tmp/*.ttf /usr/share/fonts/.
 rm -rf ./tmp
 
-
+# clean tmp folder
+rm -rf /tmp/load_fonts
