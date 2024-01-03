@@ -23,6 +23,10 @@ cp ${DIR_ROOT}/.bashrc ${WRK_CONF}/root/bashrc
 # Copy zshrc file
 cp ${DIR_ROOT}/.zshrc ${WRK_CONF}/root/zshrc
 
+# Copy OhMyZSH Conf p10k
+cp ${DIR_ROOT}/.p10k.zsh ${WRK_CONF}/root/p10k.zsh
+
+
 # Copy plasmashell Panel Config
 [[ -d ${WRK_CONF}/plasma ]] || mkdir -p ${WRK_CONF}/plasma
 cp ${DIR_CONF}/plasma-org.kde.plasma.desktop-appletsrc ${WRK_CONF}/plasma/plasma.appletsrc

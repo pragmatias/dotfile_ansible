@@ -14,10 +14,23 @@
     owner: "{{ HOME_USR }}"
     group: "{{ HOME_USR }}"
 
+- name: Load OhMyZSH plugins
+  ansible.builtin.shell:
+    cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    chdir: "{{ HOME_DIR }}/"
+
 - name: Copy Zshrc conf
   ansible.builtin.copy:
     src: "{{ RESS_DIR }}/config/root/zshrc"
     dest: "{{ HOME_DIR }}/.zshrc"
+    mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
+
+- name: Copy Zshrc (OhMyZSH p10K) conf
+  ansible.builtin.copy:
+    src: "{{ RESS_DIR }}/config/root/p10k.zsh"
+    dest: "{{ HOME_DIR }}/.p10k.zsh"
     mode: '0644'
     owner: "{{ HOME_USR }}"
     group: "{{ HOME_USR }}"
