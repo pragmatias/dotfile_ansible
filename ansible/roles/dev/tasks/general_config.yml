@@ -21,7 +21,7 @@
 
 - name: Load OhMyZSH plugins
   ansible.builtin.shell:
-    cmd: [[ -d "{{ HOME_DIR }}/.oh-my-zsh" ]] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattented
+    cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattented
     chdir: "{{ HOME_DIR }}/"
   become: yes
   become_user: "{{ HOME_USR }}"
