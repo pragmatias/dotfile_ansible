@@ -10,7 +10,7 @@
 
 - name: Import VSCode Key
   ansible.builtin.shell:
-    cmd: rmp --import https://packages.microsoft.com/keys/microsoft.asc
+    cmd: rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 - name : Add Repositories
   community.general.zypper_repository:
