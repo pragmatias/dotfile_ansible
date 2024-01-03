@@ -14,6 +14,11 @@
     owner: "{{ HOME_USR }}"
     group: "{{ HOME_USR }}"
 
+- name: Delete Folder OhMyZSH
+  ansible.builtin.file:
+    path: "{{ HOME_DIR }}/.oh-my-zsh"
+    state: absent
+
 - name: Load OhMyZSH plugins
   ansible.builtin.shell:
     cmd: [[ -d "{{ HOME_DIR }}/.oh-my-zsh" ]] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattented
