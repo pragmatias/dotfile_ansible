@@ -25,16 +25,16 @@
   with_items:
     - "{{ kde_config_file.kglobalshortcutsrc }}"
 
-- name: Change KDE Config (plasmarc)
-  community.general.kdeconfig:
-    path: "{{ HOME_DIR }}/.config/plasmarc"
-    values:
-      - group: "{{ item.group }}"
-        key: "{{ item.key }}"
-        value: "{{ item.value }}"
-    backup: false
-  with_items:
-    - "{{ kde_config_file.plasmarc }}"
+# - name: Change KDE Config (plasmarc)
+#   community.general.kdeconfig:
+#     path: "{{ HOME_DIR }}/.config/plasmarc"
+#     values:
+#       - group: "{{ item.group }}"
+#         key: "{{ item.key }}"
+#         value: "{{ item.value }}"
+#     backup: false
+#   with_items:
+#     - "{{ kde_config_file.plasmarc }}"
 
 - name: Change KDE Config (kdeglobals)
   community.general.kdeconfig:
