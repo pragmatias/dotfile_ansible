@@ -4,6 +4,13 @@
     file: repositories.yml
     name: repositories
 
+- name: Import Google Key
+  ansible.builtin.shell:
+    cmd: rpm --import https://dl.google.com/linux/linux_signing_key.pub
+
+- name: Import VSCode Key
+  ansible.builtin.shell:
+    cmd: rmp --import https://packages.microsoft.com/keys/microsoft.asc
 
 - name : Add Repositories
   community.general.zypper_repository:
@@ -12,6 +19,7 @@
     priority: "{{ item.priority }}"
     state: present
     refresh: true
+    auto_import_keys: yes
   with_items:
     - "{{ repositories.repos }}"
 

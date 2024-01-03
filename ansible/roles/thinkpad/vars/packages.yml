@@ -1,4 +1,5 @@
 packages:
+- alacritty
 - ansible                                    
 - btop                                       
 - btrfsprogs                                 
@@ -10,12 +11,14 @@ packages:
 - elisa                                      
 - firewalld                                  
 - fish                                       
-- fzf                                        
+- fzf
+- gcc
 - git                                        
 - glibc                                      
 - google-chrome-beta                         
 - iperf                                      
-- kde                                        
+- java-11-openjdk-src
+- jq
 - keepassxc                                  
 - kitty                                      
 - man-pages                                  
@@ -37,8 +40,4 @@ packages:
 - syncthing                                  
 - tmux                                       
 - vlc                                        
-- vlc-codecs                                 
-- x11                                        
-- x11_yast                                   
 - zsh                                        
-- gcc
