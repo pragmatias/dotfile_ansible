@@ -18,6 +18,8 @@
   ansible.builtin.shell:
     cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattented
     chdir: "{{ HOME_DIR }}/"
+  become: yes
+  become_user: "{{ HOME_USR }}"
 
 - name: Copy Zshrc conf
   ansible.builtin.copy:
@@ -34,6 +36,41 @@
     mode: '0644'
     owner: "{{ HOME_USR }}"
     group: "{{ HOME_USR }}"
+
+- name: Load OhMyZSH plugins (zsh-autosuggestions)
+  ansible.builtin.shell:
+    cmd: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    chdir: "{{ HOME_DIR }}/"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
+- name: Load OhMyZSH plugins (zsh-syntax-highlighting)
+  ansible.builtin.shell:
+    cmd: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    chdir: "{{ HOME_DIR }}/"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
+- name: Load OhMyZSH plugins (fzf)
+  ansible.builtin.shell:
+    cmd: git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
+    chdir: "{{ HOME_DIR }}/"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
+- name: Load OhMyZSH plugins (zsh-syntax-highlighting)
+  ansible.builtin.shell:
+    cmd: git clone --depth 1 https://github.com/aubreypwd/zsh-plugin-fd.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-plugin-fd
+    chdir: "{{ HOME_DIR }}/"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
+- name: Load OhMyZSH plugins (powerlevel10k)
+  ansible.builtin.shell:
+    cmd: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    chdir: "{{ HOME_DIR }}/"
+  become: yes
+  become_user: "{{ HOME_USR }}"
 
 - name: Copy Tmux conf
   ansible.builtin.copy:
