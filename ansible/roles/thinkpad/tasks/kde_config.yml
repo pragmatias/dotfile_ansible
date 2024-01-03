@@ -71,6 +71,8 @@
 
 - name: Copy KDE Panel Config File (plasma-org.kde.plasma.desktop-appletsrc)
   ansible.builtin.copy:
-    src: "{{ RESS_DIR }}/config/plasma-org.kde.plasma.desktop-appletsrc"
+    src: "{{ RESS_DIR }}/config/plasma/plasma.appletsrc"
     dest: "{{ HOME_DIR }}/.config/plasma-org.kde.plasma.desktop-appletsrc"
-    mode: '0644'
+    mode: '0644' 
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
