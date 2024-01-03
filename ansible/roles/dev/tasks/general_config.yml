@@ -16,7 +16,7 @@
 
 - name: Load OhMyZSH plugins
   ansible.builtin.shell:
-    cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    cmd: yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     chdir: "{{ HOME_DIR }}/"
 
 - name: Copy Zshrc conf
