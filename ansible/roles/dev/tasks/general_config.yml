@@ -24,7 +24,7 @@
 
 - name: Copy Tmux conf
   ansible.builtin.copy:
-    src: "{{ RESS_DIR }}/config/tmux"
+    src: "{{ RESS_DIR }}/config/tmux/"
     dest: "{{ HOME_DIR }}/.config/tmux"
     mode: '0644'
     owner: "{{ HOME_USR }}"
@@ -32,7 +32,7 @@
 
 - name: Copy Nvim conf
   ansible.builtin.copy:
-    src: "{{ RESS_DIR }}/config/nvim"
+    src: "{{ RESS_DIR }}/config/nvim/"
     dest: "{{ HOME_DIR }}/.config/nvim"
     mode: '0644'
     owner: "{{ HOME_USR }}"
@@ -40,7 +40,7 @@
 
 - name: Copy Kitty conf
   ansible.builtin.copy:
-    src: "{{ RESS_DIR }}/config/kitty"
+    src: "{{ RESS_DIR }}/config/kitty/"
     dest: "{{ HOME_DIR }}/.config/kitty"
     mode: '0644'
     owner: "{{ HOME_USR }}"
