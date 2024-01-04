@@ -1,3 +1,15 @@
+- name: Manage Packages
+  ansible.builtin.include_tasks:
+    file: packages.yml
+
 - name: Manage General Config
   ansible.builtin.include_tasks:
     file: general_config.yml
+
+- name: Manage General Config
+  ansible.builtin.include_tasks:
+    file: zsh_config.yml
+
+- name: Manage SSH Config
+  ansible.builtin.include_tasks:
+    file: ssh_config.yml

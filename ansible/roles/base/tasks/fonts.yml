@@ -1,0 +1,59 @@
+- name: Load Vars Fonts File
+  ansible.builtin.include_vars:
+    file: fonts.yml
+    name: fonts
+
+- name: Delete folder /tmp/load_fonts
+  ansible.builtin.file:
+    path: "/tmp/load_fonts"
+    state: absent
+
+- name: Create folder /tmp/load_fonts
+  ansible.builtin.file:
+    path: "/tmp/load_fonts"
+    state: directory
+    mode: '0755'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
+
+- name: Get fonts
+  ansible.builtin.shell:
+    cmd: wget -c "{{ item }}"
+    chdir: "/tmp/load_fonts"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+  with_items:
+    - "{{ fonts.fonts }}"
+
+- name: Decompress Fonts
+  ansible.builtin.shell:
+    cmd: ls *.zip | xargs -l unzip -o -d ./tmp
+    chdir: "/tmp/load_fonts"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
+- name: Install Fonts
+  ansible.builtin.shell:
+    cmd: cp ./tmp/*.ttf /usr/share/fonts/.
+    chdir: "/tmp/load_fonts"
+
+- name: Get font powerline
+  ansible.builtin.shell:
+    cmd: git clone https://github.com/powerline/fonts.git --depth=1
+    chdir: "/tmp/load_fonts"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
+- name: Install font powerline
+  ansible.builtin.shell:
+    cmd: ./install.sh
+    chdir: "/tmp/load_fonts/fonts"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
+- name: Delete folder /tmp/load_fonts
+  ansible.builtin.file:
+    path: "/tmp/load_fonts"
+    state: absent
+
+

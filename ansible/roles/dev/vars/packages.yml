@@ -1,0 +1,18 @@
+packages:
+- alacritty
+- ansible                                    
+- code                                       
+- fish                                       
+- fzf
+- gcc
+- git                                        
+- java-11-openjdk-src
+- jq
+- kitty                                      
+- man-pages                                  
+- neofetch                                   
+- neovim                                     
+- python                                     
+- ripgrep                                    
+- tmux                                       
+- zsh                                        

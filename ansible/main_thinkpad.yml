@@ -5,5 +5,6 @@
     HOME_USR: pragmatias
     RESS_DIR: ../resources
   roles :
-    - thinkpad
+    - base
+    - kde
     - dev

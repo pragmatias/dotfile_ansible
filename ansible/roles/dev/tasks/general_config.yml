@@ -14,69 +14,6 @@
     owner: "{{ HOME_USR }}"
     group: "{{ HOME_USR }}"
 
-- name: Delete Folder OhMyZSH
-  ansible.builtin.file:
-    path: "{{ HOME_DIR }}/.oh-my-zsh"
-    state: absent
-
-- name: Load OhMyZSH plugins
-  ansible.builtin.shell:
-    cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattented
-    chdir: "{{ HOME_DIR }}/"
-  become: yes
-  become_user: "{{ HOME_USR }}"
-
-- name: Copy Zshrc conf
-  ansible.builtin.copy:
-    src: "{{ RESS_DIR }}/config/root/zshrc"
-    dest: "{{ HOME_DIR }}/.zshrc"
-    mode: '0644'
-    owner: "{{ HOME_USR }}"
-    group: "{{ HOME_USR }}"
-
-- name: Copy Zshrc (OhMyZSH p10K) conf
-  ansible.builtin.copy:
-    src: "{{ RESS_DIR }}/config/root/p10k.zsh"
-    dest: "{{ HOME_DIR }}/.p10k.zsh"
-    mode: '0644'
-    owner: "{{ HOME_USR }}"
-    group: "{{ HOME_USR }}"
-
-- name: Load OhMyZSH plugins (zsh-autosuggestions)
-  ansible.builtin.shell:
-    cmd: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    chdir: "{{ HOME_DIR }}/"
-  become: yes
-  become_user: "{{ HOME_USR }}"
-
-- name: Load OhMyZSH plugins (zsh-syntax-highlighting)
-  ansible.builtin.shell:
-    cmd: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-    chdir: "{{ HOME_DIR }}/"
-  become: yes
-  become_user: "{{ HOME_USR }}"
-
-- name: Load OhMyZSH plugins (fzf)
-  ansible.builtin.shell:
-    cmd: git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
-    chdir: "{{ HOME_DIR }}/"
-  become: yes
-  become_user: "{{ HOME_USR }}"
-
-- name: Load OhMyZSH plugins (zsh-syntax-highlighting)
-  ansible.builtin.shell:
-    cmd: git clone --depth 1 https://github.com/aubreypwd/zsh-plugin-fd.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-plugin-fd
-    chdir: "{{ HOME_DIR }}/"
-  become: yes
-  become_user: "{{ HOME_USR }}"
-
-- name: Load OhMyZSH plugins (powerlevel10k)
-  ansible.builtin.shell:
-    cmd: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    chdir: "{{ HOME_DIR }}/"
-  become: yes
-  become_user: "{{ HOME_USR }}"
-
 - name: Copy Tmux conf
   ansible.builtin.copy:
     src: "{{ RESS_DIR }}/config/tmux/"
@@ -98,28 +35,6 @@
     src: "{{ RESS_DIR }}/config/kitty/"
     dest: "{{ HOME_DIR }}/.config/kitty"
     mode: '0644'
-    owner: "{{ HOME_USR }}"
-    group: "{{ HOME_USR }}"
-
-- name: Copy SSH conf
-  ansible.builtin.copy:
-    src: "{{ RESS_DIR }}/config/ssh/"
-    dest: "{{ HOME_DIR }}/.ssh"
-    mode: '0644'
-    owner: "{{ HOME_USR }}"
-    group: "{{ HOME_USR }}"
-
-- name: Change Permission Private SSH key 1
-  ansible.builtin.file:
-    path: "{{ HOME_DIR }}/.ssh/key_ed25519_github"
-    mode: '0600'
-    owner: "{{ HOME_USR }}"
-    group: "{{ HOME_USR }}"
-
-- name: Change Permission Private SSH key 2
-  ansible.builtin.file:
-    path: "{{ HOME_DIR }}/.ssh/key_ed25519_global"
-    mode: '0600'
     owner: "{{ HOME_USR }}"
     group: "{{ HOME_USR }}"
 

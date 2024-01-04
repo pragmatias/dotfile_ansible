@@ -6,7 +6,6 @@
   ansible.builtin.include_tasks:
     file: packages.yml
 
-- name: Manage KDE Config
+- name: Manage Fonts
   ansible.builtin.include_tasks:
-    file: kde_config.yml
-
+    file: fonts.yml

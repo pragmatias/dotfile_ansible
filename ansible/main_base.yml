@@ -6,4 +6,3 @@
     RESS_DIR: ../resources
   roles :
     - base
-    - dev
