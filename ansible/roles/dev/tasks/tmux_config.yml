@@ -1,0 +1,16 @@
+- name: Copy Tmux conf
+  ansible.builtin.copy:
+    src: "{{ RESS_DIR }}/config/tmux/"
+    dest: "{{ HOME_DIR }}/.config/tmux"
+    mode: '0644'
+    owner: "{{ HOME_USR }}"
+    group: "{{ HOME_USR }}"
+
+- name: Load Plugin TPM
+  ansible.builtin.shell:
+    cmd: git clone https://github.com/tmux-plugins/tpm plugins/tpm
+    chdir: "{{ HOME_DIR }}/.config/tmux"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
+

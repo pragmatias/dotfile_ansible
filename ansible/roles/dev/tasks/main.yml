@@ -6,9 +6,13 @@
   ansible.builtin.include_tasks:
     file: general_config.yml
 
-- name: Manage General Config
+- name: Manage ZSH Config
   ansible.builtin.include_tasks:
     file: zsh_config.yml
+
+- name: Manage TMUX Config
+  ansible.builtin.include_tasks:
+    file: tmux_config.yml
 
 - name: Manage SSH Config
   ansible.builtin.include_tasks:
