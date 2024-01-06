@@ -3,7 +3,6 @@ packages:
 - btop                                       
 - btrfsprogs                                 
 - chrony                                     
-- code                                       
 - dosfstools                                 
 - e2fsprogs                                  
 - firewalld                                  
