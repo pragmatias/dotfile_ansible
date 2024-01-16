@@ -129,7 +129,7 @@ immutability=1
 plugin=org.kde.plasma.pkupdates
 
 [Containments][108][Applets][109][Configuration]
-PreloadWeight=52
+PreloadWeight=57
 
 [Containments][108][Applets][109][Configuration][ConfigDialog]
 DialogHeight=480
@@ -213,7 +213,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][108][Applets][120][Configuration]
-PreloadWeight=59
+PreloadWeight=35
 
 [Containments][108][Applets][121]
 immutability=1
@@ -244,7 +244,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][108][Applets][150][Configuration]
-PreloadWeight=7
+PreloadWeight=0
 
 [Containments][108][ConfigDialog]
 DialogHeight=450
@@ -300,7 +300,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][68][Applets][149][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][68][Applets][69]
 immutability=1
@@ -387,7 +387,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][68][Applets][82][Configuration]
-PreloadWeight=18
+PreloadWeight=0
 
 [Containments][68][Applets][83]
 immutability=1
@@ -474,14 +474,14 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][90][Applets][104][Configuration]
-PreloadWeight=26
+PreloadWeight=2
 
 [Containments][90][Applets][148]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][90][Applets][148][Configuration]
-PreloadWeight=2
+PreloadWeight=0
 
 [Containments][90][Applets][91]
 immutability=1
@@ -558,4 +558,4 @@ knownItems=org.kde.plasma.pkupdates,org.kde.plasma.volume,org.kde.plasma.network
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/trash.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c,desktop:/Home.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c
+screenMapping=desktop:/Home.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c,desktop:/trash.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c
