@@ -36,6 +36,7 @@ For "protonmail-bridge", Follow the instruction : https://proton.me/support/inst
 
 ## Use Propritary codecs
 
+Testing for browser codecs (Youtube / Twitch / More ...)
 `sudo zypper up --allow-vendor-change`
 
 
