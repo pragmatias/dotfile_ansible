@@ -39,6 +39,14 @@ For "protonmail-bridge", Follow the instruction : https://proton.me/support/inst
 Testing for browser codecs (Youtube / Twitch / More ...)
 `sudo zypper up --allow-vendor-change`
 
+## Using Marksman to manage markdown with lspconfig (neovim)
+
+1. Go to `https://github.com/artempyanykh/marksman/releases`
+2. Download the binary
+3. `mv marksman-linux marksman && chmod +x marksman`
+4. Place the binary somewhere in your PATH
+
+
 
 
 
