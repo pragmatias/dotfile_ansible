@@ -54,6 +54,13 @@
   become: yes
   become_user: "{{ HOME_USR }}"
 
+- name: Load OhMyZSH plugins (zsh-vi-mode)
+  ansible.builtin.shell:
+    cmd: git clone --depth 1 https://github.com/jeffreytse/zsh-vi-mode.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
+    chdir: "{{ HOME_DIR }}/"
+  become: yes
+  become_user: "{{ HOME_USR }}"
+
 - name: Load OhMyZSH plugins (powerlevel10k)
   ansible.builtin.shell:
     cmd: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
