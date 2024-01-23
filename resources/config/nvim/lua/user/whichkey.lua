@@ -10,7 +10,9 @@ function M.config()
     b = { name = "+Buffers" },
     d = { name = "+Debug" },
     f = { name = "+Find" },
-    g = { name = "+Git" },
+    g = { name = "+Git",
+      h = { name = "+Diffview" }
+    },
     l = { name = "+LSP" },
     p = { name = "+Plugins" },
     t = { name = "+Test" },

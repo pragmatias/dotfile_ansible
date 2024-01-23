@@ -206,7 +206,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][108][Applets][119][Configuration]
-PreloadWeight=56
+PreloadWeight=71
 
 [Containments][108][Applets][120]
 immutability=1
@@ -227,7 +227,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][108][Applets][122][Configuration]
-PreloadWeight=77
+PreloadWeight=82
 
 [Containments][108][Applets][122][Configuration][General]
 showPercentage=true
@@ -558,4 +558,4 @@ knownItems=org.kde.plasma.pkupdates,org.kde.plasma.volume,org.kde.plasma.network
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/Home.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c,desktop:/trash.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c
+screenMapping=desktop:/trash.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c,desktop:/Home.desktop,0,f481db0c-a413-441d-8c9f-f0aa6873c94c

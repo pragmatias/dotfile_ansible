@@ -12,6 +12,12 @@ function M.config()
   local icons = require "user.icons"
 
   require("nvim-tree").setup {
+    filters = {
+      dotfiles = true,
+      git_clean = false,
+      no_buffer = false,
+      exclude = { 'node_modules' },
+    },
     hijack_netrw = false,
     sync_root_with_cwd = true,
     view = {

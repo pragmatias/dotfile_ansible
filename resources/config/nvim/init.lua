@@ -32,4 +32,8 @@ spec "user.nvim-dap"
 spec "user.nvimtree"
 spec "user.lualine"
 
+-- testing
+spec "user.neogit"
+spec "user.diffview"
+
 require "user.lazy"

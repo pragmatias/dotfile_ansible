@@ -72,7 +72,7 @@ function M.config()
     ["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     ["<leader>lf"] = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
     ["<leader>li"] = { "<cmd>LspInfo<cr>", "Info" },
-    ["<leader>lh"] = { "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", "Hints" },
+    ["<leader>lh"] = { "<cmd>lua require('lspconfig').toggle_inlay_hints()<cr>", "Hints" },
     ["<leader>lH"] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
     ["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
     ["<leader>lk"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
@@ -102,7 +102,6 @@ function M.config()
   }
 
   local lsp_group = api.nvim_create_augroup("lsp", { clear = true })
-  local telescope = require("telescope")
 
   local lspconfig = require "lspconfig"
   local icons = require "user.icons"
@@ -118,6 +117,7 @@ function M.config()
     "bashls",
     "jsonls",
     "yamlls",
+    "marksman",
   }
 
   local default_diagnostic_config = {
@@ -192,10 +192,6 @@ function M.config()
     -- on_attach(client, bufnr)
     metals.setup_dap()
 
-    -- TODO: investigate why it doesnt work
-    -- map("n", "<leader>cc", telescope.extensions.coursier.complete, { desc = "coursier complete" })
-    -- mapB("n", "<leader>mk", metals.hover_worksheet, "metals: hover worksheet")
-
     local dap_interface = {
       continue = dap.continue,
       toggle_repl = dap.repl.toggle,
@@ -223,8 +219,6 @@ function M.config()
       subscriber.on_attach(client, bufnr, dap_interface)
     end
 
-          -- mapB("n", "<leader>dl", dap_interface.run_last, "dap: Run last")
-          -- mapB("n", "<leader>dd", dap_interface.toggle_breakpoint, "dap: toggle breakpoint")
 
     dap.listeners.after["event_terminated"]["nvim-metals"] = function(_, _)
       vim.notify("Tests have finished!", vim.log.levels.INFO, { title = "Metals" })
@@ -271,8 +265,6 @@ function M.config()
     group = nvim_metals_group,
   })
 
-  -- telescope.load_extension("metals")
-  -- telescope.load_extension("dap")
 
   local function metals_status_handler(err, status, ctx)
     if status.statusType == "metals" then
