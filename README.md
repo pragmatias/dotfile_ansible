@@ -18,6 +18,12 @@ Manage dotfile with ansible
 listing :
 - vlc-codecs
 
+# Command to execute ansible installation 
+
+`ansible-playbook main_base.yml --ask-become-pass --ask-vault-pass`
+`ansible-playbook main_dev.yml --ask-become-pass --ask-vault-pass`
+`ansible-playbook main_thinkpad.yml --ask-become-pass --ask-vault-pass`
+
 
 # Tools to install/configure
 
@@ -27,6 +33,10 @@ For "protonmail-bridge", Follow the instruction : https://proton.me/support/inst
 
 ## Syncthing
 
+
+## Use Propritary codecs
+
+`sudo zypper up --allow-vendor-change`
 
 
 
