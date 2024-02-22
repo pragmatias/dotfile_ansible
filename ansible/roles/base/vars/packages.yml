@@ -1,5 +1,6 @@
 packages:
 - ansible                                    
+- android-tools
 - btop                                       
 - btrfsprogs                                 
 - chrony                                     
@@ -11,6 +12,7 @@ packages:
 - gcc
 - git                                        
 - glibc                                      
+- htop
 - iperf                                      
 - kitty                                      
 - man-pages                                  

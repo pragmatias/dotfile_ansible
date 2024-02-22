@@ -2,6 +2,10 @@
   ansible.builtin.include_tasks:
     file: packages.yml
 
+- name : Manage Flatpak Packages
+  ansible.builtin.include_tasks:
+    file: packages_flatpak.yml
+
 - name: Manage KDE Config
   ansible.builtin.include_tasks:
     file: kde_config.yml

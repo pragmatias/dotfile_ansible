@@ -8,8 +8,11 @@ packages:
 - git                                        
 - google-chrome-beta                         
 - keepassxc                                  
+- kid3
 - kitty                                      
 - man-pages                                  
 - MozillaThunderbird                         
 - syncthing                                  
-- vlc                                        
+- vlc
+- ktorrent
+- flatpak

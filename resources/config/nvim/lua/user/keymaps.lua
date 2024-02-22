@@ -35,6 +35,8 @@ keymap("n", "g#", "g#zz", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+-- keymap("n", "<", "<gv", opts)
+-- keymap("n", ">", ">gv", opts)
 
 keymap("x", "p", [["_dP]])
 
@@ -67,3 +69,6 @@ end, {unpack(opts), desc = "Noice Last Message" })
 keymap("n", "<leader>nh", function()
   require("noice").cmd("history")
 end, {unpack(opts), desc = "Noice History Message"})
+
+
+

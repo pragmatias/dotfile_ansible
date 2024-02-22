@@ -3,13 +3,20 @@ local lsp = vim.lsp
 
 local M = {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
+  -- event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPost" },
+  cmd = { "LspInfo", "LspInstall", "LspUninstall", "Mason" },
   dependencies = {
     {
       "folke/neodev.nvim",
       "nvim-lua/plenary.nvim",
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
+    -- new test
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+      -- "nvimtools/none-ls.nvim",
     },
   },
 }
@@ -143,6 +150,13 @@ function M.config()
       prefix = "",
     },
   }
+
+  -- Setup mason so it can manage 3rd party LSP servers
+  require("mason").setup({
+    ui = {
+      border = "rounded",
+    },
+  })
 
   vim.diagnostic.config(default_diagnostic_config)
 

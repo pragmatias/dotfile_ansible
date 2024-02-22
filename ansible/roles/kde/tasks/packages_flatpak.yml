@@ -1,0 +1,25 @@
+
+- name: Load Vars Packages Flatpak File
+  ansible.builtin.include_vars:
+    file: packages_flatpak.yml
+    name: packages_fp
+
+
+- name: Add (if not exist) flathub
+  ansible.builtin.shell:
+    cmd: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  become: yes
+
+
+- name: Add Flathub Packages
+  ansible.builtin.shell:
+    cmd: flatpak install flathub "{{ item }}"
+  become: yes
+  with_items:
+    - "{{ packages_fp.packages }}"
+
+
+- name: Update flathub
+  ansible.builtin.shell:
+    cmd: flatpak update
+  become: yes

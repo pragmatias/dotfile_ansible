@@ -35,5 +35,6 @@ spec "user.lualine"
 -- testing
 spec "user.neogit"
 spec "user.diffview"
+spec "user.markdown_preview"
 
 require "user.lazy"

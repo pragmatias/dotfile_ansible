@@ -5,8 +5,10 @@ local M = {
 function M.config()
   local mappings = {
     q = { "<cmd>confirm q<CR>", "Quit" },
-    h = { "<cmd>nohlsearch<CR>", "NOHL" },
+    -- h = { "<cmd>nohlsearch<CR>", "NOHL" },
+    h = { name = "+Harpoon" },
     v = { "<cmd>vsplit<CR>", "Split" },
+    L = { "<cmd>Lazy<CR>", "Lazy" },
     b = { name = "+Buffers" },
     d = { name = "+Debug" },
     f = { name = "+Find" },
@@ -14,8 +16,8 @@ function M.config()
       h = { name = "+Diffview" }
     },
     l = { name = "+LSP" },
-    p = { name = "+Plugins" },
-    t = { name = "+Test" },
+    -- p = { name = "+Plugins" },
+    -- t = { name = "+Test" },
     n = { name = "+Noice"},
     a = {
       name = "Tab",
@@ -25,7 +27,7 @@ function M.config()
       h = { "<cmd>-tabmove<cr>", "Move Left" },
       l = { "<cmd>+tabmove<cr>", "Move Right" },
     },
-    T = { name = "Treesitter" },
+    -- T = { name = "Treesitter" },
     x = { name = "+Diagnostics" },
     m = { name = "+Metals" },
   }

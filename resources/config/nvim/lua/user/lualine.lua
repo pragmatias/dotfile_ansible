@@ -26,7 +26,34 @@ M.config = function()
     end
   end
 
+  local harpoon = require("harpoon.mark")
+  local function harpoon_component()
+    local total_marks = harpoon.get_length()
 
+    if total_marks == 0 then
+      return ""
+    end
+
+    local current_mark = "—"
+
+    local mark_idx = harpoon.get_current_index()
+    if mark_idx ~= nil then
+      current_mark = tostring(mark_idx)
+    end
+
+    return string.format("󱡅 %s/%d", current_mark, total_marks)
+  end
+
+  -- local function diff_source()
+  --   local gitsigns = vim.b.gitsigns_status_dict
+  --   if gitsigns then
+  --     return {
+  --       added = gitsigns.added,
+  --       modified = gitsigns.changed,
+  --       removed = gitsigns.removed,
+  --     }
+  --   end
+  -- end
 
   require("lualine").setup({
     options = {
@@ -36,7 +63,7 @@ M.config = function()
     },
     sections = {
       lualine_a = { "mode" },
-      lualine_b = { "branch" },
+      lualine_b = { "branch" , harpoon_component},
 
       lualine_c = {
         {
@@ -52,15 +79,15 @@ M.config = function()
       },
       lualine_x = {
         -- stylua: ignore
-        {
-          function() return require("noice").api.status.command.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-        },
+        -- {
+        --   require("noice").api.status.command.get,
+        --   cond = require("noice").api.status.command.has,
+        -- },
         -- stylua: ignore
-        {
-          function() return require("noice").api.status.mode.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-        },
+        -- {
+        --   require("noice").api.status.mode.get,
+        --   cond = require("noice").api.status.mode.has,
+        -- },
         -- stylua: ignore
         {
           function() return "  " .. require("dap").status() end,
@@ -78,16 +105,7 @@ M.config = function()
             modified = icons.git.modified,
             removed = icons.git.removed,
           },
-          source = function()
-            local gitsigns = vim.b.gitsigns_status_dict
-            if gitsigns then
-              return {
-                added = gitsigns.added,
-                modified = gitsigns.changed,
-                removed = gitsigns.removed,
-              }
-            end
-          end,
+          -- { diff_source },
         },
       },
       lualine_y = {

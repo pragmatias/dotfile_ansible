@@ -8,46 +8,136 @@ local M = {
       { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
       { "hrsh7th/cmp-nvim-lsp-signature-help" },
-    },
+    	{ "L3MON4D3/LuaSnip" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "rafamadriz/friendly-snippets" },
+			{ "onsails/lspkind.nvim" },
+  },
 }
 
 M.config = function()
+  local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+  local luasnip = require("luasnip")
+  local lspkind = require("lspkind")
   local cmp = require("cmp")
+
+  -- Integrate nvim-autopairs with cmp
+  cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+  -- Load snippets
+  require("luasnip.loaders.from_vscode").lazy_load()
+
+
   cmp.setup({
-    sources = {
-      { name = "nvim_lsp", priority = 10 },
-      { name = "buffer" },
-      { name = "vsnip" },
-      { name = "path" },
-      { name = "nvim_lsp_signature_help" },
-    },
     snippet = {
       expand = function(args)
-        -- Comes from vsnip
-        vim.fn["vsnip#anonymous"](args.body)
+        luasnip.lsp_expand(args.body)
       end,
     },
-    mapping = cmp.mapping.preset.insert({ -- None of this made sense to me when first looking into this since there
-      -- is no vim docs, but you can't have select = true here _unless_ you are
-      -- also using the snippet stuff. So keep in mind that if you remove
-      -- snippets you need to remove this select
-      ["<CR>"] = cmp.mapping.confirm({ select = true }),
-      ["<Tab>"] = function(fallback)
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+      ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+      ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+      ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
+        elseif luasnip.expand_or_jumpable() then
+          luasnip.expand_or_jump()
         else
           fallback()
         end
-      end,
-      ["<S-Tab>"] = function(fallback)
+      end, { "i", "s" }),
+      ["<S-Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
+        elseif luasnip.jumpable(-1) then
+          luasnip.jump(-1)
         else
           fallback()
         end
-      end,
+      end, { "i", "s" }),
+      ["<C-u>"] = cmp.mapping.scroll_docs(4), -- scroll up preview
+      ["<C-d>"] = cmp.mapping.scroll_docs(-4), -- scroll down preview
+      ["<C-Space>"] = cmp.mapping.complete({}), -- show completion suggestions
+      ["<C-c>"] = cmp.mapping.abort(), -- close completion window
+      ["<CR>"] = cmp.mapping.confirm({ select = true }), -- select suggestion
     }),
+    -- sources for autocompletion
+    sources = cmp.config.sources({
+      { name = "nvim_lsp" }, -- lsp
+      { name = "buffer", max_item_count = 5 }, -- text within current buffer
+      { name = "copilot" }, -- Copilot suggestions
+      { name = "path", max_item_count = 3 }, -- file system paths
+      { name = "luasnip", max_item_count = 3 }, -- snippets
+    }),
+    -- Enable pictogram icons for lsp/autocompletion
+    formatting = {
+      expandable_indicator = true,
+      format = lspkind.cmp_format({
+        mode = "symbol_text",
+        maxwidth = 50,
+        ellipsis_char = "...",
+        symbol_map = {
+          Copilot = "",
+        },
+      }),
+    },
+    experimental = {
+      ghost_text = true,
+    },
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  -- cmp.setup({
+  --   sources = {
+  --     { name = "nvim_lsp", priority = 10 },
+  --     { name = "buffer" },
+  --     { name = "vsnip" },
+  --     { name = "path" },
+  --     { name = "nvim_lsp_signature_help" },
+  --   },
+  --   snippet = {
+  --     expand = function(args)
+  --       -- Comes from vsnip
+  --       vim.fn["vsnip#anonymous"](args.body)
+  --     end,
+  --   },
+  --   mapping = cmp.mapping.preset.insert({ -- None of this made sense to me when first looking into this since there
+  --     -- is no vim docs, but you can't have select = true here _unless_ you are
+  --     -- also using the snippet stuff. So keep in mind that if you remove
+  --     -- snippets you need to remove this select
+  --     ["<CR>"] = cmp.mapping.confirm({ select = true }),
+  --     ["<Tab>"] = function(fallback)
+  --       if cmp.visible() then
+  --         cmp.select_next_item()
+  --       else
+  --         fallback()
+  --       end
+  --     end,
+  --     ["<S-Tab>"] = function(fallback)
+  --       if cmp.visible() then
+  --         cmp.select_prev_item()
+  --       else
+  --         fallback()
+  --       end
+  --     end,
+  --   }),
+  -- })
 end
 
 

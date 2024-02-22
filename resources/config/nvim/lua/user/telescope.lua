@@ -41,7 +41,16 @@ function M.config()
 
   require("telescope").setup {
     defaults = {
-      file_ignore_patterns = { "target", "node_modules", "parser.c", "out", "%.min.js" },
+      file_ignore_patterns = { 
+        "target"
+        ,"node_modules"
+        ,"parser.c"
+        ,"out"
+        ,"%.min.js"
+        ,"yarn.lock"
+        ,".git"
+        ,"_build"
+        ,".next"},
       prompt_prefix = icons.ui.Telescope .. " ",
       selection_caret = icons.ui.Forward .. " ",
       entry_prefix = "   ",
