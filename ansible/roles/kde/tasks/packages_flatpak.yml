@@ -5,21 +5,17 @@
     name: packages_fp
 
 
-- name: Add (if not exist) flathub
-  ansible.builtin.shell:
-    cmd: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-  become: yes
+- name: Add the flathub flatpak repository
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
 
 
-- name: Add Flathub Packages
-  ansible.builtin.shell:
-    cmd: flatpak install flathub "{{ item }}"
-  become: yes
+- name: Install flatpak packages
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: present
   with_items:
     - "{{ packages_fp.packages }}"
 
-
-- name: Update flathub
-  ansible.builtin.shell:
-    cmd: flatpak update
-  become: yes
