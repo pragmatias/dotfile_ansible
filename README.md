@@ -34,7 +34,7 @@ For "protonmail-bridge", Follow the instruction : https://proton.me/support/inst
 ## Syncthing
 
 
-## Use Propritary codecs
+## Use Proprietary codecs
 
 Testing for browser codecs (Youtube / Twitch / More ...)
 `sudo zypper up --allow-vendor-change`
@@ -47,6 +47,8 @@ Testing for browser codecs (Youtube / Twitch / More ...)
 4. Place the binary somewhere in your PATH
 
 
+# Scripting
 
+The `save_config.sh` script is used to get the needed config files into the repository
 
 
