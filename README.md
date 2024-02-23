@@ -7,10 +7,9 @@ Manage dotfile with ansible
 
 
 # Ansible configuration
-` sudo vi /etc/ansible/hosts` 
-
-` echo "[openSUSE]" >> /etc/ansible/hosts` 
-` echo 'localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"' >> /etc/ansible/hosts` 
+- ` sudo vi /etc/ansible/hosts` 
+- ` echo "[openSUSE]" >> /etc/ansible/hosts` 
+- ` echo 'localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python3"' >> /etc/ansible/hosts` 
 
 
 # Package for manual installation
