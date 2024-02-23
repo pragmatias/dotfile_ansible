@@ -20,9 +20,9 @@ listing :
 
 # Command to execute ansible installation 
 
-`ansible-playbook main_base.yml --ask-become-pass --ask-vault-pass`
-`ansible-playbook main_dev.yml --ask-become-pass --ask-vault-pass`
-`ansible-playbook main_thinkpad.yml --ask-become-pass --ask-vault-pass`
+- `ansible-playbook main_base.yml --ask-become-pass --ask-vault-pass`
+- `ansible-playbook main_dev.yml --ask-become-pass --ask-vault-pass`
+- `ansible-playbook main_thinkpad.yml --ask-become-pass --ask-vault-pass`
 
 
 # Tools to install/configure
