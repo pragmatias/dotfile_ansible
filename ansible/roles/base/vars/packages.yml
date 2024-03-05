@@ -8,6 +8,7 @@ packages:
 - e2fsprogs                                  
 - firewalld                                  
 - fish                                       
+  ffmpeg-6
 - fzf
 - gcc
 - git                                        
