@@ -16,6 +16,7 @@ Manage dotfile with ansible
 
 listing :
 - vlc-codecs
+- ffmpeg-6
 
 # Command to execute ansible installation 
 
@@ -50,4 +51,6 @@ Testing for browser codecs (Youtube / Twitch / More ...)
 
 The `save_config.sh` script is used to get the needed config files into the repository
 
+# Todo 
 
+- Add OPI ?
