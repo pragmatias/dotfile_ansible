@@ -24,6 +24,23 @@ listing :
 - `ansible-playbook main_dev.yml --ask-become-pass --ask-vault-pass`
 - `ansible-playbook main_thinkpad.yml --ask-become-pass --ask-vault-pass`
 
+# Post install
+
+1. Configure Firefox compact mode
+    1. Use `about:config`
+    2. Use `browser.comapctmode.show = true`
+    3. Go to `Application menu > More Tools > Customize Bar`
+    4. Use `Density > Compact`
+2. Install [fzf](https://github.com/junegunn/fzf) (shortcut & more) 
+    1. Exec `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
+    2. Exec `~/.fzf/install`
+3. Install [Coursier](https://get-coursier.io/docs/cli-installation)
+    1. Create Folder `mkdir ~/Tools`
+    2. Go into the Folder `cd ~/Tools`
+    3. Exec `curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs`
+    4. Exec `chmod +x cs`
+    5. Exec `./cs setup`
+
 
 # Tools to install/configure
 

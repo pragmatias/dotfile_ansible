@@ -6,5 +6,5 @@
     RESS_DIR: ../resources
   roles :
     - base
-    - kde
     - dev
+    - kde
