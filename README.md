@@ -60,13 +60,25 @@ Testing for browser codecs (Youtube / Twitch / More ...)
 
 1. Go to `https://github.com/artempyanykh/marksman/releases`
 2. Download the binary
-3. `mv marksman-linux marksman && chmod +x marksman`
+3. Create Folder `mkdir ~/Tools`
+3. `mv marksman-linux ~/Tools/marksman && chmod +x ~/Tools/marksman`
 4. Place the binary somewhere in your PATH
-
+    1. Add in the `~/.bashrc` the line `export PATH=$PATH:/home/pragmatias/Tools`
 
 # Scripting
 
 The `save_config.sh` script is used to get the needed config files into the repository
+
+
+# WSL
+TMUX not working :
+- Use script init.sh 
+- Modif sudoer 
+    1. `sudo visudo`
+    2. `pragmatias ALL=(root) NOPASSWD: /usr/bin/systemd-tmpfiles`
+- Modif ~/.bashrc
+    1. `./init.sh`
+
 
 # Todo 
 
