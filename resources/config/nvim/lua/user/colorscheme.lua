@@ -43,6 +43,7 @@ local M = {
 
 function M.config()
   vim.cmd.colorscheme "catppuccin-mocha"
+  -- vim.cmd.colorscheme "catppuccin-latte"
 end
 
 return M
