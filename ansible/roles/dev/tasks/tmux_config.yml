@@ -6,6 +6,11 @@
     owner: "{{ HOME_USR }}"
     group: "{{ HOME_USR }}"
 
+- name: Check Plugin TMP Folder 
+  ansible.builtin.file:
+    path: "{{ HOME_DIR }}/.config/tmux/plugins/tpm"
+    state: absent
+
 - name: Load Plugin TPM
   ansible.builtin.shell:
     cmd: git clone https://github.com/tmux-plugins/tpm plugins/tpm

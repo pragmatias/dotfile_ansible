@@ -65,6 +65,10 @@ Testing for browser codecs (Youtube / Twitch / More ...)
 4. Place the binary somewhere in your PATH
     1. Add in the `~/.bashrc` the line `export PATH=$PATH:/home/pragmatias/Tools`
 
+## Using Yamlls to manage Yaml file with lspconfig (neovim)
+
+1. Install the nodejs package `npm install -g yaml-language-server`
+
 # Scripting
 
 The `save_config.sh` script is used to get the needed config files into the repository
