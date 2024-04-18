@@ -79,6 +79,8 @@ TMUX not working :
 - Modif ~/.bashrc
     1. `./init.sh`
 
+Use Existing Work Folder with SymLink :
+`ln -s /mnt/d/Git ~/Work`
 
 # Todo 
 
