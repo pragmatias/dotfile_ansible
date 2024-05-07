@@ -20,7 +20,7 @@
   ansible.builtin.shell:
     cmd: wget -c "{{ item }}"
     chdir: "/tmp/load_fonts"
-  become: yes
+  become: true
   become_user: "{{ HOME_USR }}"
   with_items:
     - "{{ fonts.fonts }}"
@@ -29,7 +29,7 @@
   ansible.builtin.shell:
     cmd: ls *.zip | xargs -l unzip -o -d ./tmp
     chdir: "/tmp/load_fonts"
-  become: yes
+  become: true
   become_user: "{{ HOME_USR }}"
 
 - name: Install Fonts
@@ -41,14 +41,14 @@
   ansible.builtin.shell:
     cmd: git clone https://github.com/powerline/fonts.git --depth=1
     chdir: "/tmp/load_fonts"
-  become: yes
+  become: true
   become_user: "{{ HOME_USR }}"
 
 - name: Install font powerline
   ansible.builtin.shell:
     cmd: ./install.sh
     chdir: "/tmp/load_fonts/fonts"
-  become: yes
+  become: true
   become_user: "{{ HOME_USR }}"
 
 - name: Delete folder /tmp/load_fonts

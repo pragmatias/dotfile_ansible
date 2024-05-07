@@ -15,7 +15,7 @@
   ansible.builtin.shell:
     cmd: git clone https://github.com/tmux-plugins/tpm plugins/tpm
     chdir: "{{ HOME_DIR }}/.config/tmux"
-  become: yes
+  become: true
   become_user: "{{ HOME_USR }}"
 
 
