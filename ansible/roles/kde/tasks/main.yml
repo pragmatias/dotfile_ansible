@@ -2,6 +2,10 @@
   ansible.builtin.include_tasks:
     file: packages.yml
 
+- name: Remove Packages
+  ansible.builtin.include_tasks:
+    file: packages_removes.yml
+
 - name : Manage Flatpak Packages
   ansible.builtin.include_tasks:
     file: packages_flatpak.yml
