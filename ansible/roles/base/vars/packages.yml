@@ -23,6 +23,8 @@ packages:
 - ntfsprogs                                  
 - os-prober                                  
 - python                                     
+- python311-pip
+- python311-virtualenv
 - ripgrep                                    
 - rpm                                        
 - tmux                                       

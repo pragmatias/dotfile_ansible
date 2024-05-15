@@ -2,6 +2,7 @@ packages:
 - alacritty
 - ansible                                    
 - code                                       
+- docker
 - fd
 - fish                                       
 - fzf
