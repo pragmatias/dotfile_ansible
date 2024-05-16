@@ -3,6 +3,7 @@ packages:
 - ansible                                    
 - code                                       
 - docker
+- docker-compose
 - fd
 - fish                                       
 - fzf
@@ -17,6 +18,8 @@ packages:
 - neofetch                                   
 - neovim
 - npm
+- podman-docker
+- podman-compose
 - python                                     
 - ripgrep                                    
 - tmux                                       
