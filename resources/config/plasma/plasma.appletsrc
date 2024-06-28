@@ -52,7 +52,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][105][Applets][130][Configuration]
-PreloadWeight=82
+PreloadWeight=100
 popupHeight=400
 popupWidth=352
 
@@ -128,8 +128,8 @@ immutability=1
 lastScreen=0
 location=3
 plugin=org.kde.plasma.private.systemtray
-popupHeight=384
-popupWidth=384
+popupHeight=360
+popupWidth=360
 wallpaperplugin=org.kde.image
 
 [Containments][108][Applets][109]
@@ -152,7 +152,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][108][Applets][110][Configuration]
-PreloadWeight=52
+PreloadWeight=97
 
 [Containments][108][Applets][110][Configuration][General]
 migrated=true
@@ -218,14 +218,17 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][108][Applets][119][Configuration]
-PreloadWeight=92
+PreloadWeight=100
+
+[Containments][108][Applets][119][Configuration][General]
+currentDetailsTab=details
 
 [Containments][108][Applets][120]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][108][Applets][120][Configuration]
-PreloadWeight=84
+PreloadWeight=76
 
 [Containments][108][Applets][121]
 immutability=1
@@ -239,7 +242,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][108][Applets][122][Configuration]
-PreloadWeight=41
+PreloadWeight=0
 
 [Containments][108][Applets][122][Configuration][General]
 showPercentage=true
@@ -267,7 +270,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][108][Applets][156][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][108][ConfigDialog]
 DialogHeight=450

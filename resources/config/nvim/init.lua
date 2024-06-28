@@ -16,9 +16,11 @@ spec "user.noice"
 spec "user.indentline"
 spec "user.telescope"
 spec "user.treesitter"
+spec "user.cmp"
+spec "user.nvim-dap"
+spec "user.harpoon"
 
 spec "user.gitsigns"
-spec "user.harpoon"
 spec "user.illuminate"
 
 spec "user.trouble"
@@ -26,8 +28,6 @@ spec "user.lspconfig"
 spec "user.mason"
 -- spec "user.project"
 
-spec "user.cmp"
-spec "user.nvim-dap"
 
 spec "user.nvimtree"
 spec "user.lualine"
