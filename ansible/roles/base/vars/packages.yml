@@ -21,6 +21,8 @@ packages:
 - NetworkManager                             
 - ntfs-3g                                    
 - ntfsprogs                                  
+- openvpn
+- openresolv
 - os-prober                                  
 - python                                     
 - python311-pip
