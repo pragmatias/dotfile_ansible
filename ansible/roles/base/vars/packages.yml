@@ -17,14 +17,14 @@ packages:
 - kitty                                      
 - man-pages                                  
 - mokutil                                    
-- neofetch                                   
+- neowofetch                                   
 - NetworkManager                             
 - ntfs-3g                                    
 - ntfsprogs                                  
 - openvpn
 - openresolv
 - os-prober                                  
-- python                                     
+- python311                                     
 - python311-pip
 - python311-virtualenv
 - ripgrep                                    

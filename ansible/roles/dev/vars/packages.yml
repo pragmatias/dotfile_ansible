@@ -2,8 +2,6 @@ packages:
 - alacritty
 - ansible                                    
 - code                                       
-- docker
-- docker-compose
 - fd
 - fish                                       
 - fzf
@@ -15,12 +13,12 @@ packages:
 - kitty                                      
 - make
 - man-pages                                  
-- neofetch                                   
+- neowofetch                                   
 - neovim
 - npm
 - podman-docker
 - podman-compose
-- python                                     
+- python311                                     
 - ripgrep                                    
 - tmux                                       
 - zsh                                        
